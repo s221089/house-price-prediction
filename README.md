@@ -1,6 +1,4 @@
-
- "cells": [
-  {
+ {
    "cell_type": "markdown",
    "id": "ed05c9d9",
    "metadata": {
@@ -67,3 +65,41 @@
     "\n",
     "このNotebookは、基本的な前処理からモデル構築・評価・提出までを一貫して行えるように設計されています。\n"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "02c21516",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2025-07-24T07:09:30.661176Z",
+     "iopub.status.busy": "2025-07-24T07:09:30.660979Z",
+     "iopub.status.idle": "2025-07-24T07:09:40.820809Z",
+     "shell.execute_reply": "2025-07-24T07:09:40.820229Z"
+    },
+    "papermill": {
+     "duration": 10.163228,
+     "end_time": "2025-07-24T07:09:40.822116",
+     "exception": false,
+     "start_time": "2025-07-24T07:09:30.658888",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "import numpy as np\n",
+    "from lightgbm import LGBMRegressor\n",
+    "from sklearn.metrics import mean_squared_error\n",
+    "from sklearn.model_selection import KFold\n",
+    "\n",
+    "# データ読み込み\n",
+    "train_df = pd.read_csv('/kaggle/input/house-prices-advanced-regression-techniques/train.csv')\n",
+    "test_df = pd.read_csv('/kaggle/input/house-prices-advanced-regression-techniques/test.csv')\n",
+    "\n",
+    "# SalePriceを取り出しておく\n",
+    "y_train = train_df['SalePrice']\n",
+    "\n"
+   ]
+  },
